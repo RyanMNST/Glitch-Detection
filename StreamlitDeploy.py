@@ -35,6 +35,9 @@ class FileUpload(object):
         # Video Conference Glitch Detection
         Task Item #5 Project - Convolutional Neural Network
         """)
+        st.write("""
+        A prototype image or video classifier that can determine if an uploaded image has visual glitches or whether a video contains graphical glitches.
+        """)
 
         st.markdown(STYLE, unsafe_allow_html=True)
         file = st.file_uploader("Upload image file", type=['png', 'jpg'])
