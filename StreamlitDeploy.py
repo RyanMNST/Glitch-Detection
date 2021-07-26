@@ -24,7 +24,7 @@ class FileUpload(object):
         Task Item #5 Project - Convolutional Neural Network
         """)
 
-        st.markdown(STYLE, unsafe_allow_html=True)
+        st.markdown(unsafe_allow_html=True)
         file = st.file_uploader("Upload image file", type=['png', 'jpg'])
 
         if not file:
