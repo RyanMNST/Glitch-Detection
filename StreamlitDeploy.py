@@ -14,6 +14,14 @@ st.set_page_config(
     layout='wide', 
     initial_sidebar_state='auto')
 
+STYLE = """
+<style>
+img {
+    max-width: 100%;
+}
+</style>
+"""
+
 class FileUpload(object):
     def __init__(self):
         self.fileTypes = ['png', 'jpg']
@@ -24,7 +32,7 @@ class FileUpload(object):
         Task Item #5 Project - Convolutional Neural Network
         """)
 
-        st.markdown(unsafe_allow_html=True)
+        st.markdown(STYLE, unsafe_allow_html=True)
         file = st.file_uploader("Upload image file", type=['png', 'jpg'])
 
         if not file:
