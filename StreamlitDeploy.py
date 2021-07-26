@@ -38,7 +38,8 @@ class FileUpload(object):
 
         if not file:
             show_file.info("Please upload an image file : {}".format(' '.join(['png', 'jpg'])))
-        content__ = file.getvalue()
+            return
+        content = file.getvalue()
 
         if isinstance(file, BytesIO):
             show_file.image(file)
