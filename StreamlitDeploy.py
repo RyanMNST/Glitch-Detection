@@ -10,7 +10,7 @@ import pandas as pd
 
 st.set_page_config(
     page_title=None,
-    page_icon=None, 
+    page_icon="🖥️", 
     layout='centered', 
     initial_sidebar_state='auto')
 
