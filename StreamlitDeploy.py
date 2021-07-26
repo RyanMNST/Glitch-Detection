@@ -47,12 +47,9 @@ class FileUpload(object):
 
         if isinstance(file, BytesIO):
             img = PILImage.create(file)
-            out_pl.clear_output()
-            with out_pl: display(img.to_thumb(128,128))
             pred,pred_idx,probs = learn_inf.predict(img)
             prediction = f'Prediction: {pred}; Probability: {probs[pred_idx]:.04f}'
             st.write(prediction)
-
             show_file.image(file)
             
 
