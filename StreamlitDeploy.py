@@ -22,6 +22,10 @@ img {
 </style>
 """
 
+# Load model
+path = Path()
+learn_inf = load_learner(path/'export.pkl', cpu=True)
+
 class FileUpload(object):
     def __init__(self):
         self.fileTypes = ['png', 'jpg']
@@ -43,6 +47,10 @@ class FileUpload(object):
 
         if isinstance(file, BytesIO):
             show_file.image(file)
+            pred,pred_idx,probs = learn_inf.predict(file)
+            prediction = f'Prediction: {pred}; Probability: {probs[pred_idx]:.04f}'
+            st.write(prediction)
+
         else:
             df = pd.read_csv(file)
             st.dataframe(df.head(2))
