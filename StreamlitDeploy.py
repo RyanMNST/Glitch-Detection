@@ -36,7 +36,11 @@ class FileUpload(object):
         Task Item #5 Project - Convolutional Neural Network
         """)
         st.write("""
-        A prototype image or video classifier that can determine if an uploaded image has visual glitches or whether a video contains graphical glitches.
+        A prototype image or video classifier that can determine if an uploaded image has visual glitches or whether a video contains graphical glitches.\n
+        TODO\n
+        - Video Upload\n
+        - Incorporate more models for other glitches\n
+        - Dashboard for descriptive data analytics\n
         """)
 
         st.markdown(STYLE, unsafe_allow_html=True)
