@@ -34,6 +34,7 @@ class FileUpload(object):
 
         st.markdown(STYLE, unsafe_allow_html=True)
         file = st.file_uploader("Upload image file", type=['png', 'jpg'])
+        show_file = st.empty()
 
         if not file:
             show_file.info("Please upload an image file : {}".format(' '.join(['png', 'jpg'])))
@@ -44,6 +45,7 @@ class FileUpload(object):
         else:
             df = pd.read_csv(file)
             st.dataframe(df.head(2))
+        
         file.close()
 
 if __name__ == "__main__":
