@@ -11,7 +11,7 @@ import pandas as pd
 st.set_page_config(
     page_title=None,
     page_icon=None, 
-    layout='wide', 
+    layout='centered', 
     initial_sidebar_state='auto')
 
 STYLE = """
@@ -52,8 +52,6 @@ class FileUpload(object):
             st.write(prediction)
             show_file.image(file)
             
-
-
         else:
             df = pd.read_csv(file)
             st.dataframe(df.head(2))
