@@ -46,10 +46,16 @@ class FileUpload(object):
         content = file.getvalue()
 
         if isinstance(file, BytesIO):
-            show_file.image(file)
-            pred,pred_idx,probs = learn_inf.predict(file)
+            img = PILImage.create(file)
+            out_pl.clear_output()
+            with out_pl: display(img.to_thumb(128,128))
+            pred,pred_idx,probs = learn_inf.predict(img)
             prediction = f'Prediction: {pred}; Probability: {probs[pred_idx]:.04f}'
             st.write(prediction)
+
+            show_file.image(file)
+            
+
 
         else:
             df = pd.read_csv(file)
