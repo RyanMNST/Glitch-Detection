@@ -8,3 +8,6 @@ def app():
     # Video Conference Glitch Detection
     Task Item #5 Project - Convolutional Neural Network
     """)
+
+if __name__ == "__main__":
+  app()
