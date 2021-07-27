@@ -26,6 +26,7 @@ img {
 path = Path()
 learn_inf = load_learner(path/'export.pkl', cpu=True)
 
+@st.cache(allow_output_mutation=True)
 class FileUpload(object):
     def __init__(self):
         self.fileTypes = ['png', 'jpg']
